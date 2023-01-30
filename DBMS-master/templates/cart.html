@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cart
+{% endblock title %}
+
+{% block body %}
+<div class ="container mt-3">
+  <div class="row">
+  
+    <div class="col-md-5">
+      
+      <div class="card" style="width: 18rem;">
+        <img src="static/images/cart.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Catalogue</h5>
+          
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">FPV Drone</li>
+          <li class="list-group-item">Humanoid</li>
+          <li class="list-group-item">Motion Sensing Robot</li>
+          <li class="list-group-item">Robot Crane</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Contact Us</a>
+          <a href="aboutus" class="card-link">About Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+     <br>
+     <br>
+
+      <h4 class="text-center bg-white text-dark">Place your order</h4>
+<br>
+
+<form action="/cart" method="post" class="jumbotron">
+
+ 
+
+  <div class="form-group">
+
+    <input type="email" class="form-control" id="email" value={{current_user.email}} name="email" required>
+  
+  </div>
+  <br>
+  
+   <br>
+
+  <div class="form-group">
+  
+    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+  <br>
+  <div class="form-group">
+
+            
+                                      
+    <select class="form-control" id="product" name="product"  required>
+            <option selected>Select Product</option>
+            <option value="FPV Drone">FPV Drone</option>
+            <option value="Humanoid">Humanoid</option>
+            <option value="Motion Sensing Robot">Motion Sensing Robot</option>
+            <option value="Crane Robot">Crane Robot</option>
+            <option value="Dog Robot">Dog Robot</option>
+            <option value="Bug Robot">Bug Robot</option>
+          </select> 
+     </div>
+  
+<br>
+   <div class="form-group">
+    
+    <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+  
+  </div>
+<br>
+
+<div class="form-group">
+ 
+ <input type="number" class="form-control" id="pincode" name="pincode" placeholder="Pincode" required>
+
+</div>
+
+
+
+  <div class="form-group">
+    <h7> Please contact admin to register mobile number before proceeding to recieve SMS alerts</h7>
+
+    <input type="number" class="form-control" id="number" name="number" placeholder="Phone Number" required>
+
+  
+  </div>
+  <br>
+  <div class="form-group">
+
+    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity" required>
+  
+  </div>
+
+  <br>
+  <button type="submit" class="btn btn-success btn-sm btn-block">Book</button>
+</form>
+    </div>
+  
+  </div>
+  
+  </div>
+{% endblock body %}

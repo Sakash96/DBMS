@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Order Details
+{% endblock title %}
+
+
+{% block body %}
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Address</th>
+        <th scope="col">Pincode</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">EDIT</th>
+        <th scope="col">DELETE</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      
+      {% for post in query %}
+      <tr>
+        <th scope="row">{{post.order_id}}</th>
+        <td>{{post.email}}</td>
+        <td>{{post.name}}</td>
+        <td>{{post.product}}</td>
+        <td>{{post.quantity}}</td>
+        <td>{{post.address}}</td>
+        <td>{{post.pincode}}</td>
+        <td>{{post.number}}</td>
+        <td><a href="/edit/{{post.order_id}}"><button class="btn btn-primary">Edit </button> </a> </td>
+    <td><a href="/delete/{{post.order_id}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Delete </button> </a> </td>
+        
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+    
+  </table>
+  
+{% endblock body %}

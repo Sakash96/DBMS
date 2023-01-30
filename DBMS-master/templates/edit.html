@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit Orders
+{% endblock title %}
+
+{% block body %}
+
+<div class ="row">
+
+    <div class ="col-md-4">
+    </div>
+    <div class ="col-md-4">
+        <br>
+        <br>
+        <h4 class="text-center bg-danger text-dark">Update your order</h4>
+<br>
+        <form action="/edit/{{posts.order_id}}" method="post" class="jumbotron">
+
+ 
+
+            <div class="form-group">
+          
+              <input type="email" class="form-control" id="email" value={{current_user.email}} name="email" required>
+            
+            </div>
+            <br>
+            
+             <br>
+          
+            <div class="form-group">
+            
+              <input type="text" class="form-control" id="name"  name="name"  placeholder="Full Name" value={{posts.name}} required>
+            <br>
+            <div class="form-group">
+           
+              <select class="form-control" id="pid" name="product" placeholder="Product ID" required>
+                <option selected>{{posts.product}}</option>
+                <option value="FPV Drone">FPV Drone</option>
+                <option value="Humanoid">Humanoid</option>
+                <option value="Motion Sensing Robot">Motion Sensing Robot</option>
+                <option value="Crane Robot">Crane Robot</option>
+          
+              </select>
+             
+             </div>
+            </div>
+          <br>
+             <div class="form-group">
+              
+              <input type="text" class="form-control" id="address"  name="address"  placeholder="Address" value={{posts.address}} required>
+            
+            </div>
+          <br>
+          
+          <div class="form-group">
+           
+           <input type="number" class="form-control" id="pincode" name="pincode"placeholder="Pincode" value={{posts.pincode}} required>
+          
+          </div>
+          
+          <br>
+          
+            <div class="form-group">
+          
+              <input type="number" class="form-control" id="number" name="number" placeholder="Phone Number"value={{posts.number}}  required>
+            
+            </div>
+          
+            <br>
+            <div class="form-group">
+          
+              <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity"value={{posts.quantity}}  required>
+            
+            </div>
+          <br>
+            <button type="submit" class="btn btn-warning btn-sm btn-block">UPDATE</button>
+          </form>
+    </div>
+    <div class ="col-md-4">
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Logs using Triggers
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-4">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Trigger ID</th>
+        <th scope="col">ID</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">Action</th>
+        <th scope="col">Time Stamp</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      
+      {% for post in posts %}
+      <tr>
+        <th scope="row">{{post.tid}}</th>
+        <td>{{post.order_id}}</td>
+        <td>{{post.email}}</td>
+        <td>{{post.name}}</td>
+        <td>{{post.action}}</td>
+        <td>{{post.timestamp}}</td>
+       
+       
+        
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}
